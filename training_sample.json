@@ -1,0 +1,242 @@
+[
+    [
+        "EIGHT SEVEN NINE EIGHT FIVE SIX ONE ONE ONE NINE",
+        {
+            "entities": [
+                [
+                    0,
+                    48,
+                    "PHONE"
+                ]
+            ]
+        }
+    ],
+    [
+        "eight one three two zero eight eight four zero three",
+        {
+            "entities": [
+                [
+                    0,
+                    52,
+                    "PHONE"
+                ]
+            ]
+        }
+    ],
+    [
+        "69 09 20 91 58",
+        {
+            "entities": [
+                [
+                    0,
+                    14,
+                    "PHONE"
+                ]
+            ]
+        }
+    ],
+    [
+        "Hi guy's92 my name33 betty am a good 73person let's 87have same funny 87together with same love and fun. Thank you.",
+        {
+            "entities": []
+        }
+    ],
+    [
+        "paid sex",
+        {
+            "entities": []
+        }
+    ],
+    [
+        "hardworking, polite searching for friends",
+        {
+            "entities": []
+        }
+    ],
+    [
+        "eight two six four three seven two five seven nine",
+        {
+            "entities": [
+                [
+                    0,
+                    50,
+                    "PHONE"
+                ]
+            ]
+        }
+    ],
+    [
+        "9 8 7 6 5 4 3 2 1 0",
+        {
+            "entities": [
+                [
+                    0,
+                    19,
+                    "PHONE"
+                ]
+            ]
+        }
+    ],
+    [
+        "9-8-7-6-5-4-3-2-1-0",
+        {
+            "entities": [
+                [
+                    0,
+                    19,
+                    "PHONE"
+                ]
+            ]
+        }
+    ],
+    [
+        "9_8_7_6_5_4_3_2_1_0",
+        {
+            "entities": [
+                [
+                    0,
+                    19,
+                    "PHONE"
+                ]
+            ]
+        }
+    ],
+    [
+        "9.8.7.6.5.4.3.2.1.0",
+        {
+            "entities": [
+                [
+                    0,
+                    19,
+                    "PHONE"
+                ]
+            ]
+        }
+    ],
+    [
+        "(9)(8)(7)(6)(5)(4)(3)(2)(1)(0)",
+        {
+            "entities": [
+                [
+                    1,
+                    29,
+                    "PHONE"
+                ]
+            ]
+        }
+    ],
+    [
+        "nine eight seven six five four three two one zero",
+        {
+            "entities": [
+                [
+                    0,
+                    49,
+                    "PHONE"
+                ]
+            ]
+        }
+    ],
+    [
+        "nine8seven6five4three2one0",
+        {
+            "entities": []
+        }
+    ],
+    [
+        "9eight7six5four3two1zero",
+        {
+            "entities": []
+        }
+    ],
+    [
+        "eight seven six five four",
+        {
+            "entities": []
+        }
+    ],
+    [
+        "8 7 6 5 4",
+        {
+            "entities": []
+        }
+    ],
+    [
+        "8-7-6-5-4",
+        {
+            "entities": []
+        }
+    ],
+    [
+        "8_7_6_5_4",
+        {
+            "entities": []
+        }
+    ],
+    [
+        "8.7.6.5.4",
+        {
+            "entities": []
+        }
+    ],
+    [
+        "8^7^6^5^4",
+        {
+            "entities": []
+        }
+    ],
+    [
+        "8**7**6**5**4",
+        {
+            "entities": []
+        }
+    ],
+    [
+        "8\u00b27\u00b26\u00b25\u00b24\u00b2",
+        {
+            "entities": []
+        }
+    ],
+    [
+        "8\u20776\u20754\u00b32\u00b9",
+        {
+            "entities": []
+        }
+    ],
+    [
+        "eight7six5four3",
+        {
+            "entities": []
+        }
+    ],
+    [
+        "ei8ht sev7n s1x f0ur",
+        {
+            "entities": []
+        }
+    ],
+    [
+        "e1ght s3ven s1x f0ur",
+        {
+            "entities": []
+        }
+    ],
+    [
+        "\u24fc\u24fb\u24fa\u24f9\u24f8",
+        {
+            "entities": []
+        }
+    ],
+    [
+        "\ud835\udfd6\ud835\udfd5\ud835\udfd4\ud835\udfd3\ud835\udfd2",
+        {
+            "entities": []
+        }
+    ],
+    [
+        "nine-eight-seven-six-five",
+        {
+            "entities": []
+        }
+    ]
+]

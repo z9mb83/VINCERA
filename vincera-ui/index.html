@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Vincera</title>
+    <!-- Modern geometry font -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- opening theme black and white -->
+    <div id="splash" class="splash-screen">
+        <div class="splash-content">
+            <h1 class="splash-logo">VINCERA</h1>
+            <div class="elegant-line"></div>
+            <p class="splash-tagline">Destiny Awaits</p>
+        </div>
+    </div>
+
+    <!-- Overall ui theme aurora green and glacier blue -->
+    <div id="app" class="app-container">
+        
+        <!-- Aurora Background Elements -->
+        <div class="aurora-wrapper">
+            <div class="aurora aurora-green"></div>
+            <div class="aurora glacier-blue"></div>
+            <div class="aurora-overlay"></div>
+        </div>
+
+        <!-- Header -->
+        <header class="app-header">
+            <h2 class="brand-text">Vincera</h2>
+            <div class="header-icons">
+                <button class="icon-btn filter-btn">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Swipe Area -->
+        <main class="card-area">
+            <div class="swipe-card" id="mainCard">
+                <img src="profile.png" alt="Profile" class="profile-img">
+                <div class="card-gradient"></div>
+                
+                <div class="card-info glass-panel">
+                    <div class="info-header">
+                        <h3 class="name">Sarah<span class="age">, 24</span></h3>
+                        <div class="distance-badge">
+                            <span class="status-dot"></span>
+                            2 miles away
+                        </div>
+                    </div>
+                    <p class="bio">Adventure seeker & coffee addict. Let's explore the city together and see where the night takes us ✨</p>
+                    <div class="tags">
+                        <span class="tag">Photography</span>
+                        <span class="tag">Travel</span>
+                        <span class="tag">Late Nights</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Swipe Action Control -->
+        <div class="controls">
+            <button class="ctrl-btn btn-pass" id="btnPass">
+                <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <button class="ctrl-btn btn-super" id="btnSuper">
+                <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </button>
+            <button class="ctrl-btn btn-like" id="btnLike">
+                <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            </button>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav glass-panel">
+            <button class="nav-item active">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+            </button>
+            <button class="nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            </button>
+            <button class="nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </button>
+        </nav>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

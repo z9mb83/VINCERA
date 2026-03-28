@@ -1,0 +1,395 @@
+:root {
+    --bg-dark: #070B14;
+    --aurora-green: #00E676; /* Vibrant Neon Green */
+    --glacier-blue: #00E5FF; /* Electric Cyan Blue */
+    --text-primary: #FFFFFF;
+    --text-sec: rgba(255, 255, 255, 0.7);
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --font: 'Outfit', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font);
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    overflow: hidden; /* Prevent scrolling for app feel */
+    height: 100vh;
+    width: 100vw;
+}
+
+/* ================== SPLASH SCREEN (Black & White) ================== */
+.splash-screen {
+    position: fixed;
+    inset: 0;
+    background-color: #000000;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    transition: opacity 1s cubic-bezier(0.7, 0, 0.3, 1), transform 1s ease, visibility 1s;
+}
+
+.splash-content {
+    text-align: center;
+}
+
+.splash-logo {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    animation: zoom-in 2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.elegant-line {
+    width: 0;
+    height: 1px;
+    background-color: #FFFFFF;
+    margin: 20px auto;
+    animation: draw-line 1.2s ease 0.5s forwards;
+}
+
+.splash-tagline {
+    font-size: 0.9rem;
+    font-weight: 300;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fade-up 1s ease 1.2s forwards;
+}
+
+/* Animation Classes for Splash Hide */
+.splash-fade {
+    opacity: 0;
+    transform: scale(1.1);
+    visibility: hidden;
+}
+
+
+/* ================== MAIN APP UI (Aurora Green & Glacier Blue) ================== */
+.app-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    opacity: 0; /* Hidden initially until splash fades in JS */
+    transition: opacity 1.5s ease;
+}
+
+.app-container.visible {
+    opacity: 1;
+}
+
+/* Aurora Animated Mesh Background */
+.aurora-wrapper {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    background: var(--bg-dark);
+}
+
+.aurora {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.6;
+    animation: float-aurora 15s infinite alternate ease-in-out;
+}
+
+.aurora-green {
+    width: 70vw;
+    height: 70vw;
+    background: var(--aurora-green);
+    top: -10%;
+    right: -20%;
+}
+
+.glacier-blue {
+    width: 80vw;
+    height: 80vw;
+    background: var(--glacier-blue);
+    bottom: -15%;
+    left: -20%;
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+
+/* Dark vignette overlay to keep text readable */
+.aurora-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, transparent 0%, var(--bg-dark) 100%);
+}
+
+/* Reusable Glassmorphism Panel */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+}
+
+/* Header */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+}
+
+.brand-text {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, var(--glacier-blue), var(--aurora-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.icon-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    transition: All 0.3s ease;
+}
+.icon-btn:hover {
+    color: var(--glacier-blue);
+    background: rgba(0, 229, 255, 0.1);
+}
+
+/* Swipe Area */
+.card-area {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    perspective: 1000px;
+}
+
+.swipe-card {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    height: 65vh;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5), 0 0 0 1px var(--glass-border);
+    transform-origin: 50% 100%;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.4s ease;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.card-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(7, 11, 20, 0.95) 0%, rgba(7, 11, 20, 0.3) 40%, transparent 100%);
+}
+
+.card-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 24px 20px;
+    border-radius: 0 0 24px 24px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.info-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 10px;
+}
+
+.name {
+    font-size: 2rem;
+    font-weight: 700;
+}
+.age {
+    font-weight: 300;
+    font-size: 1.5rem;
+    opacity: 0.8;
+}
+
+.distance-badge {
+    font-size: 0.8rem;
+    color: var(--text-sec);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--aurora-green);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--aurora-green);
+}
+
+.bio {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text-sec);
+    margin-bottom: 16px;
+}
+
+.tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    font-size: 0.75rem;
+    padding: 6px 12px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.tag:hover {
+    background: rgba(255,255,255,0.15);
+    border-color: var(--glacier-blue);
+    color: var(--glacier-blue);
+}
+
+/* Control Buttons */
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 0 20px;
+}
+
+.ctrl-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.btn-super {
+    width: 48px;
+    height: 48px;
+    color: var(--glacier-blue);
+}
+
+/* Glowing Micro-interactions */
+.btn-pass:hover {
+    background: rgba(255, 59, 48, 0.15);
+    color: #FF3B30;
+    border-color: #FF3B30;
+    box-shadow: 0 0 20px rgba(255, 59, 48, 0.3);
+    transform: scale(1.1);
+}
+
+.btn-super:hover {
+    background: rgba(0, 229, 255, 0.15);
+    border-color: var(--glacier-blue);
+    box-shadow: 0 0 25px rgba(0, 229, 255, 0.4);
+    transform: scale(1.15);
+}
+
+.btn-like:hover {
+    background: rgba(0, 230, 118, 0.15);
+    color: var(--aurora-green);
+    border-color: var(--aurora-green);
+    box-shadow: 0 0 30px rgba(0, 230, 118, 0.4);
+    transform: scale(1.1);
+}
+
+/* Bottom Nav */
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 18px 0;
+    margin: 0 20px 20px;
+    border-radius: 24px;
+}
+
+.nav-item {
+    background: transparent;
+    border: none;
+    color: var(--text-sec);
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover, .nav-item.active {
+    color: var(--aurora-green);
+    transform: translateY(-3px);
+    filter: drop-shadow(0 0 10px rgba(0,230,118,0.6));
+}
+
+/* Animations Profiles */
+@keyframes zoom-in {
+    0% { transform: scale(0.9); opacity: 0; letter-spacing: 0px; }
+    100% { transform: scale(1); opacity: 1; letter-spacing: 12px; }
+}
+
+@keyframes draw-line {
+    to { width: 120px; }
+}
+
+@keyframes fade-up {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float-aurora {
+    0% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(5vw, -5vh) scale(1.1); }
+    66% { transform: translate(-3vw, 3vh) scale(0.95); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+
+/* Desktop Mockup Constraints */
+@media (min-width: 768px) {
+    .app-container {
+        max-width: 420px;
+        margin: 0 auto;
+        border-right: 1px solid var(--glass-border);
+        border-left: 1px solid var(--glass-border);
+        box-shadow: 0 0 50px rgba(0,230,118,0.1);
+    }
+}
