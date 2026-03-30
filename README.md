@@ -2,9 +2,6 @@
 
 > **Find your forever.**
 
-<p align="center">
-  <img src="https://via.placeholder.com/1200x400/0a1628/00d4aa?text=Vincera+-+Premium+Dating+Platform" alt="Vincera Banner" />
-</p>
 
 <p align="center">
   <a href="#-overview">Overview</a> •
